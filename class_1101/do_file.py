@@ -17,12 +17,19 @@
 #二进制
 #rb rb+  wb wb+  ab ab+
 
+<<<<<<< HEAD
 # r的用法
+=======
+
+>>>>>>> eb5b29bfafe62ce378b79e91b08f4f4579916056
 # file = open('python11.txt','r',encoding='utf-8')
 # res = file.read()
 # print(res)
 
+<<<<<<< HEAD
 #w的用法
+=======
+>>>>>>> eb5b29bfafe62ce378b79e91b08f4f4579916056
 # file = open('python11.txt','r+',encoding='utf-8')
 # res = file.read()       #进行一次读写之后，光标就到文末！光标默认是在开头！
 # file.write('777')
@@ -31,6 +38,7 @@
 # file = open('python22.txt','w',encoding='utf-8')    #文件不存在，则新建一个文件
 # file.write('111')
 
+<<<<<<< HEAD
 #a的用法
 # file = open('python11.txt','a',encoding='utf-8')
 # file.write('\n这是一次练习！')
@@ -51,3 +59,6 @@ file = open('python11.txt', 'a', encoding='utf-8')
 file.writelines(['\n888\n','777\n','666'])
 
 #拓展：如何移动光标???
+=======
+#如何移动光标
+>>>>>>> eb5b29bfafe62ce378b79e91b08f4f4579916056
