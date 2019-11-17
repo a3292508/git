@@ -1,0 +1,22 @@
+test_add_nagitive (class_1117.unittest_01.TestMathMethod)
+负数相加 ... FAIL
+test_add_positive (class_1117.unittest_01.TestMathMethod)
+正数相加 ... ok
+test_sub_nagitive (class_1117.unittest_01.TestMathMethod)
+负数相减 ... ok
+test_sub_positive (class_1117.unittest_01.TestMathMethod)
+正数相减 ... ok
+
+======================================================================
+FAIL: test_add_nagitive (class_1117.unittest_01.TestMathMethod)
+负数相加
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\17486\PycharmProjects\python_11\class_1117\unittest_01.py", line 27, in test_add_nagitive
+    self.assertNotEqual(-12,res,msg='-3+-9=-12')    #断言不通过时，会展示msg的内容
+AssertionError: -12 == -12 : -3+-9=-12
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (failures=1)
