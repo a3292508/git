@@ -13,6 +13,8 @@
 
 import unittest
 from class_1117_practice.object_pack import HttpRequest
+# COOKIE = None
+from class_1117_practice.get_data import GetData
 
 class TestHttp(unittest.TestCase):
     """测试用例"""
@@ -25,8 +27,12 @@ class TestHttp(unittest.TestCase):
         pass
 
     def test_login_success(self):
+        # global COOKIE       #声明全局变量
         data = {"username":"16602159899","password":"123456"}
         res = HttpRequest().http_request('post',self.login_url,data)
+        if res.cookies:     #如果cookie有的话，就更新COOKIE
+            # COOKIE = res.cookies
+            setattr(GetData,'Cookie',res.cookies)       #反射
         try:
             self.assertEqual('10001',res.json()['code'])
         except AssertionError as e:
@@ -41,9 +47,40 @@ class TestHttp(unittest.TestCase):
         except AssertionError as e:
             print('error is {}'.format(e))
             raise e
-    #
-    # def test_recharge_success(self):
-    #     data = {'mobilephone':'18003831018','money':'1000'}
+
+    def test_recharge_success(self):
+        # global COOKIE
+        data = {'mobilephone':'18003831018','amount':'1000'}
+        # res = HttpRequest().http_request('post', self.recharge_url, data,COOKIE)
+        res = HttpRequest().http_request('post', self.recharge_url, data, getattr(GetData,'Cookie'))
+        try:
+            self.assertEqual('10001',res.json()['code'])
+        except AssertionError as e:
+            print('error is {}'.format(e))
+            raise e
+
+    def test_recharge_failure(self):
+        # global COOKIE
+        data = {'mobilephone':'18003831018','amount':'-300'}
+        # res = HttpRequest().http_request('post', self.recharge_url, data,COOKIE)
+        res = HttpRequest().http_request('post', self.recharge_url, data, getattr(GetData, 'Cookie'))
+        try:
+            self.assertEqual('20117',res.json()['code'])
+        except AssertionError as e:
+            print('error is {}'.format(e))
+            raise e
 
 if __name__ == '__main__':
     unittest.main()
+
+#如何解决cookie问题，或数据之间相互依赖的问题（第二个接口要用到第一个接口的返回值）？
+#1.全局变量global
+# 缺点：关联性比较强，一步错步步错
+#2.反射：
+#setattr()  可以直接把类里面的属性做修改
+#hasattr()  判断是否有这个属性的值，有则返回True，否则False
+#getattr()  获取属性的值
+#delattr()  删除属性的值
+# 缺点：关联性比较强，一步错步步错
+
+#3.写进setUp()中
