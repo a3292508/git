@@ -3,13 +3,14 @@
 
 import unittest
 from HTMLTestRunner import HTMLTestRunner
-from class_1117_practice.homework_practice import TestHttp
+# from class_1117_practice.homework_practice import TestHttp
+from class_1117_practice import homework_practice
 
 suite = unittest.TestSuite()
 
 loader = unittest.TestLoader()
 
-suite.addTest(loader.loadTestsFromModule(TestHttp))
+suite.addTest(loader.loadTestsFromModule(homework_practice))
 
 with open('test_report.html','wb') as file:
     runner = HTMLTestRunner(stream=file,
