@@ -26,12 +26,14 @@ class DoExcel:
 
         return test_data
 
-    def write_back(self,file_name,sheet_name,item,value):
+    @staticmethod
+    def write_back(self,file_name,sheet_name,item,result,test_result):
         """写回结果数据"""
         wb = load_workbook(file_name)
         sheet = wb[sheet_name]
-        sheet.cell(item,7).value = value
-        wb.save(value)
+        sheet.cell(item,7).value = result
+        sheet.cell(item,8).value = test_result
+        wb.save(file_name)
 
 if __name__ == '__main__':
     test_data = DoExcel().get_data("../test_data/test_data.xlsx",'login')
