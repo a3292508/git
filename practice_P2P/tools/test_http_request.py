@@ -3,12 +3,12 @@
 
 import unittest
 from practice_P2P.tools.http_request import HttpRequest
-from practice_P2P.tools.get_cookie import GetCookie
+from practice_P2P.tools.get_data import GetData
 from ddt import ddt,data
 from practice_P2P.tools.do_excel import DoExcel
 from practice_P2P.tools.project_path import *
 
-test_data = DoExcel().get_data(test_data_path,'login')       #执行的用例
+test_data = DoExcel().get_data(test_data_path)       #执行的用例
 
 @ddt
 class TestHttpRequest(unittest.TestCase):
@@ -20,8 +20,9 @@ class TestHttpRequest(unittest.TestCase):
 
     @data(*test_data)
     def test_api(self,item):
-        res = HttpRequest().http_request(item['url'],eval(item['data']),item['http_method'],getattr(GetCookie,'Cookie'))
-        print("获取到的结果是：{0}".format(res.json()))
+        res = HttpRequest().http_request(item['url'],eval(item['data']),item['http_method'],getattr(GetData,'Cookie'))
+        if res.cookies:     #利用反射，存储cookies值
+            setattr(GetData,'Cookie',res.cookies)
         try:
             self.assertEqual(str(item['expected']), res.json()['code'])
             test_result = 'PASS'
@@ -31,7 +32,7 @@ class TestHttpRequest(unittest.TestCase):
             raise e
         finally:
             print("获取到的结果是：{0}".format(res.json()))
-            DoExcel.write_back(test_data_path,'login',item['case_id']+1,str(res.json()),test_result)
+            DoExcel.write_back(test_data_path,item['sheet_name'],item['case_id']+1,str(res.json()),test_result)
 
 if __name__ == '__main__':
     unittest.main()

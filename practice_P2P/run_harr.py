@@ -3,7 +3,7 @@
 
 from practice_P2P.tools.http_request import HttpRequest
 from practice_P2P.tools.do_excel import DoExcel
-from practice_P2P.tools.get_cookie import GetCookie
+from practice_P2P.tools.get_data import GetCookie
 
 def run(test_data,sheet_name):
     for item in test_data:
