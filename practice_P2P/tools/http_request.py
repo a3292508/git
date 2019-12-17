@@ -2,7 +2,7 @@
 #-*- coding:utf-8 -*-
 
 import requests
-
+from practice_P2P.tools.my_log import MyLog
 class HttpRequest:
 
     # @staticmethod     #可以设置成静态函数
@@ -13,9 +13,11 @@ class HttpRequest:
             elif http_method.upper()=='POST':
                 res = requests.post(url,data,cookies=cookie)
             else:
-                print('输入的请求方式错误！')
+                # print('输入的请求方式错误！')
+                MyLog().info("输入的请求方式错误！")
         except Exception as e:
-            print("请求报错了：{0}".format(e))
+            # print("请求报错了：{0}".format(e))
+            MyLog().error("请求报错了：{0}".format(e))
             raise e
         return res
 

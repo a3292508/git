@@ -13,3 +13,5 @@ test_report_path = os.path.join(project_path,'test_result','html_report','test_a
 #配置文件的路径
 test_config_path = os.path.join(project_path,'conf','case.config')
 # print(test_config_path)
+#日志报告文件的路径
+log_path = os.path.join(project_path,'test_result','log','log.txt')

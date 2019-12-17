@@ -35,6 +35,7 @@ class DoExcel:
                     row_data['http_method'] = sheet.cell(item,5).value
                     row_data['expected'] = sheet.cell(item,6).value
                     test_data.append(row_data)
+                    self.update_tel(file_name,'init',tel+2)
             else:
                 for case_id in mode[key]:
                     row_data = {}
@@ -52,10 +53,11 @@ class DoExcel:
                     row_data['expected'] = sheet.cell(case_id+1, 6).value
                     row_data['sheet_name'] = key
                     test_data.append(row_data)
+                    self.update_tel(file_name, 'init', tel + 2)
         return test_data
 
     @staticmethod
-    def write_back(self,file_name,sheet_name,item,result,test_result):
+    def write_back(file_name,sheet_name,item,result,test_result):
         """写回结果数据"""
         wb = load_workbook(file_name)
         sheet = wb[sheet_name]
@@ -63,7 +65,7 @@ class DoExcel:
         sheet.cell(item,8).value = test_result
         wb.save(file_name)
 
-    def update_tel(self,file_name,sheet_name,tel,wb):
+    def update_tel(self,file_name,sheet_name,tel):
         """更新Excel里的手机号数据"""
         wb = load_workbook(file_name)
         sheet = wb[sheet_name]
@@ -72,5 +74,6 @@ class DoExcel:
 
 if __name__ == '__main__':
     test_data = DoExcel().get_data(project_path.test_data_path)
-    for data in test_data:
-        print(data)
+    # for data in test_data:
+    #     print(data)
+    print(test_data)
