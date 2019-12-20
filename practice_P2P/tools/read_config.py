@@ -14,4 +14,4 @@ class ReadConfig:
 
 if __name__ == '__main__':
     from practice_P2P.tools import project_path
-    print(ReadConfig.get_config(project_path.test_config_path,'MODE','mode'))
+    print(eval(ReadConfig.get_config(project_path.test_config_path,'DATABASE','db_config')))

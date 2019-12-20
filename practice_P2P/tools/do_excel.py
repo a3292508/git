@@ -25,10 +25,10 @@ class DoExcel:
                     row_data['case_id'] = sheet.cell(item,1).value
                     row_data['url'] = sheet.cell(item,2).value
                     # row_data['data'] = sheet.cell(item,3).value
-                    if sheet.cell(item,3).value.find('${tel_1}')!=-1:
-                        row_data['data'] = sheet.cell(item,3).value.replace('${tel_1}',str(tel))
-                    elif sheet.cell(item,3).value.find('${tel}')!=-1:
-                        row_data['data'] = sheet.cell(item, 3).value.replace('${tel}', str(tel+1))
+                    if sheet.cell(item,3).value.find('${tel}')!=-1:
+                        row_data['data'] = sheet.cell(item,3).value.replace('${tel}',str(tel))
+                    # elif sheet.cell(item,3).value.find('${tel}')!=-1:
+                    #     row_data['data'] = sheet.cell(item, 3).value.replace('${tel}', str(tel+1))
                     else:
                         row_data['data'] = sheet.cell(item, 3).value
                     row_data['title'] = sheet.cell(item,4).value
