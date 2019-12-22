@@ -5,9 +5,9 @@
 import pymysql
 from practice_P2P.tools import project_path
 import configparser
-test_config_path = project_path.test_config_path
+config_path = project_path.test_config_path
 cf = configparser.ConfigParser()
-cf.read(test_config_path,encoding='utf-8')
+cf.read(config_path,encoding='utf-8')
 host = cf.get('DATABASE','host')
 port = cf.get('DATABASE','port')
 user = cf.get('DATABASE','user')
@@ -29,13 +29,16 @@ class OperateDb:
         # 使用cursor()方法创建一个游标对象cur
         self.cur = self.connection.cursor()
 
-    def select_db(self, selete_sql):
+    def select_db(self, selete_sql,state='all'):    #state=all是有多条记录，=1是只有1条记录
         """查询数据"""
         # 使用 execute()方法执行SQL查询
         self.cur.execute(selete_sql)
-        # 使用fetchall()方法获取查询结果
-        data = self.cur.fetchall()          #列表嵌套元祖，针对多行数据
-        # data = self.cur.fetchone()       #元祖类型，针对一条数据
+        if state == 1:
+            # 使用fetchall()方法获取查询结果
+            data = self.cur.fetchone()       #元祖类型，针对一条数据
+        else:
+            data = self.cur.fetchall()       #列表嵌套元祖，针对多行数据
+
         # 关闭数据库连接
         self.connection.close()
         return data

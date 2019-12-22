@@ -8,6 +8,7 @@ from ddt import ddt,data
 from practice_P2P.tools.do_excel import DoExcel
 from practice_P2P.tools.project_path import *
 from practice_P2P.tools.my_log import MyLog
+from practice_P2P.tools.do_mysql import OperateDb
 
 test_data = DoExcel().get_data(test_data_path)       #执行的用例
 
@@ -21,6 +22,11 @@ class TestHttpRequest(unittest.TestCase):
 
     @data(*test_data)
     def test_api(self,item):
+        if item['data'].find('${loan_id}') != -1:
+            sql = 'select max(Id) from loan where MemberId={0}'.format(getattr(GetData,'loan_member_id'))
+            loan_id = OperateDb().select_db(sql)[0][0]
+            item['data'] = item['data'].replace('${loan_id}',str(loan_id))
+            setattr(GetData,'loan_id',loan_id)
         res = HttpRequest().http_request(item['url'],eval(item['data']),item['http_method'],getattr(GetData,'Cookie'))
         if res.cookies:     #利用反射，存储cookies值
             setattr(GetData,'Cookie',res.cookies)

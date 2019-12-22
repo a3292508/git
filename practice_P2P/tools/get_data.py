@@ -5,6 +5,7 @@ from practice_P2P.tools import project_path
 import pandas as pd
 class GetData:
     Cookie = None
+    loan_id = None
     Telphone = pd.read_excel(project_path.test_data_path,sheet_name='init').ix[0,0]
     normal_tel = pd.read_excel(project_path.test_data_path,sheet_name='init').ix[1,0]
     admin_tel = pd.read_excel(project_path.test_data_path,sheet_name='init').ix[2,0]
