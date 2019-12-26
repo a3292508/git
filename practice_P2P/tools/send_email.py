@@ -2,12 +2,13 @@
 #-*- coding:utf-8 -*-
 
 import smtplib
-import time,os
+import time
+import os
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 
-server = 'smtp.qq.com'
+server = 'smtp.163.com'
 sender = 'z16602159899@163.com'
 passwd = 'zyj16602159899'
 

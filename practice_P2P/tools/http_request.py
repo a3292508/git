@@ -3,6 +3,7 @@
 
 import requests
 from practice_P2P.tools.my_log import MyLog
+
 class HttpRequest:
 
     # @staticmethod     #可以设置成静态函数
