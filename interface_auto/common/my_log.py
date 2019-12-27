@@ -6,7 +6,7 @@ import logging
 from interface_auto.common.project_path import log_path
 from interface_auto.common.read_config import ReadConfig
 
-level = ReadConfig().read_config('LOG','level')
+m_level = ReadConfig().read_config('LOG','level')
 c_level = ReadConfig().read_config('LOG','c_level')
 f_level = ReadConfig().read_config('LOG','f_level')
 filename = ReadConfig().read_config('LOG','filename')
@@ -20,7 +20,7 @@ class MyLog:
         #定义一个日志收集器
         my_logger = logging.getLogger('api_auto')
         #设定日志的级别
-        my_logger.setLevel('DEBUG')
+        my_logger.setLevel(m_level)
         #设置输出格式
         formatter = logging.Formatter('%(asctime)s-%(levelname)s-%(filename)s-%(name)s-日志信息:%(message)s')
         #一：指定输出到控制台
