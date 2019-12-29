@@ -24,7 +24,8 @@ class HttpRequest:
         return res
 
 if __name__ == '__main__':
-    register_url = 'http://test.lemonban.com/futureloan/mvc/api/member/register'
-    register_data = {"mobilephone":"17777700001","pwd":"123456","regname":"诗诗"}
-    res = HttpRequest.http_request(register_url,register_data,'post')
+    login_url = 'http://test.lemonban.com/futureloan/mvc/api/member/login'
+    login_data = {"mobilephone":"17777700001","pwd":"123456"}
+    res = HttpRequest.http_request(login_url,login_data,'post')
     print(res.json())
+    print(res.cookies)

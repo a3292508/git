@@ -7,15 +7,15 @@ import os
 """
 
 #当前项目目录的路径
-project_path = os.path.dirname(os.path.dirname(__file__))
+project_dir = os.path.dirname(os.path.dirname(__file__))
 
 #配置文件的目录路径
-config_path = os.path.join(project_path,'conf')
+config_dir = os.path.join(project_dir,'conf')
 #测试用例的目录路径
-cases_path = os.path.join(project_path,'test_cases')
+cases_dir = os.path.join(project_dir,'test_cases')
 #测试数据的目录路径
-data_path = os.path.join(project_path,'test_data')
+data_dir = os.path.join(project_dir,'test_data')
 #测试日志的目录路径
-log_path = os.path.join(project_path,'test_log')
+log_dir = os.path.join(project_dir,'test_log')
 #测试报告的目录路径
-report_path = os.path.join(project_path,'test_reports')
+report_dir = os.path.join(project_dir,'test_reports')

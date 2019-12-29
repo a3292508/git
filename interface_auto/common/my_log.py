@@ -3,7 +3,7 @@
 
 import os
 import logging
-from interface_auto.common.project_path import log_path
+from interface_auto.common.project_path import log_dir
 from interface_auto.common.read_config import ReadConfig
 
 m_level = ReadConfig().read_config('LOG','level')
@@ -11,7 +11,7 @@ c_level = ReadConfig().read_config('LOG','c_level')
 f_level = ReadConfig().read_config('LOG','f_level')
 filename = ReadConfig().read_config('LOG','filename')
 #拼接日志文件的路径
-file_path = os.path.join(log_path,filename)
+file_path = os.path.join(log_dir,filename)
 
 class MyLog:
     """封装打印日志的方法"""
@@ -23,13 +23,13 @@ class MyLog:
         my_logger.setLevel(m_level)
         #设置输出格式
         formatter = logging.Formatter('%(asctime)s-%(levelname)s-%(filename)s-%(name)s-日志信息:%(message)s')
-        #一：指定输出到控制台
+        #指定输出到控制台
         control_handler = logging.StreamHandler()
         control_handler.setLevel(c_level)
         control_handler.setFormatter(formatter)
         my_logger.addHandler(control_handler)
 
-        #二：指定输出到文件
+        #指定输出到文件
         file_hander = logging.FileHandler(file_path,encoding='utf-8')
         file_hander.setLevel(f_level)
         file_hander.setFormatter(formatter)

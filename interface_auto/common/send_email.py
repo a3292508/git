@@ -17,13 +17,14 @@ class SendEmail:
         :param file_path: 附件的路径
         """
         smtp_server = ReadConfig().read_config('EMAIL','server')
+        port = eval(ReadConfig().read_config('EMAIL','port'))
         sender = ReadConfig().read_config('EMAIL','sender')
         password = ReadConfig().read_config('EMAIL','password')
         receivers = ReadConfig().read_config('EMAIL','receivers')
         now = time.strftime('%Y-%m-%d %H:%M:%S')
 
         #第一步：连接到服务器
-        smtp = smtplib.SMTP(smtp_server,port=25,timeout=30)
+        smtp = smtplib.SMTP(smtp_server,port,timeout=30)
         smtp.login(sender,password)
 
         #第二步：构建邮件
