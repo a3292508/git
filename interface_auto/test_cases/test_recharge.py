@@ -32,10 +32,14 @@ class TestApi(unittest.TestCase):
     @data(*test_data)
     def test_api(self,case):
         url = self.base_url + case['url']
-        data = eval(case['data'])
+        data = case['data']
         method = case['method']
         expected = str(case['expected'])
-        res = HttpRequest.http_request(url=url,data=data,method=method,cookie=getattr(GetData,'COOKIE'))
+        if data.find('${login_phone}') != -1:
+            data = data.replace('${login_phone}',getattr(GetData,'login_phone'))
+        elif data.find('${recharge_phone}') != -1:
+            data = data.replace('${recharge_phone}',getattr(GetData,'recharge_phone'))
+        res = HttpRequest.http_request(url=url,data=eval(data),method=method,cookie=getattr(GetData,'COOKIE'))
         if res.cookies:
             setattr(GetData,'COOKIE',res.cookies)
         try:

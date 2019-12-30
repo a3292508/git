@@ -32,12 +32,10 @@ class TestApi(unittest.TestCase):
     @data(*test_data)
     def test_api(self,case):
         url = self.base_url + case['url']
-        data = eval(case['data'])
+        data = case['data']
         method = case['method']
         expected = str(case['expected'])
-        res = HttpRequest.http_request(url=url,data=data,method=method,cookie=getattr(GetData,'COOKIE'))
-        if res.cookies:
-            setattr(GetData,'COOKIE',res.cookies)
+        res = HttpRequest.http_request(url=url,data=eval(data),method=method)
         try:
             self.assertEqual(expected,res.json()['code'])
             self.result = '通过'

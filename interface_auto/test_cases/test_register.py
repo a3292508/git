@@ -36,7 +36,7 @@ class TestApi(unittest.TestCase):
         method = case['method']
         expected = str(case['expected'])
         if data.find('register_phone') != -1:
-            data = data.replace('${register_phone}',self.register_phone )
+            data = data.replace('${register_phone}',self.register_phone)
         res = HttpRequest.http_request(url=url,data=eval(data),method=method)
         try:
             self.assertEqual(expected,res.json()['code'])

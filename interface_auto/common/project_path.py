@@ -14,8 +14,8 @@ config_dir = os.path.join(project_dir,'conf')
 #测试用例的目录路径
 cases_dir = os.path.join(project_dir,'test_cases')
 #测试数据的目录路径
-data_dir = os.path.join(project_dir,'test_data')
+data_dir = os.path.join(project_dir,'data')
 #测试日志的目录路径
-log_dir = os.path.join(project_dir,'test_log')
+log_dir = os.path.join(project_dir,'log')
 #测试报告的目录路径
-report_dir = os.path.join(project_dir,'test_reports')
+report_dir = os.path.join(project_dir,'report')
