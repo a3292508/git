@@ -11,7 +11,6 @@ now = time.strftime('%Y-%m-%d %H_%M_%S')
 report_name = now + 'report.html'
 #拼接测试报告的路径
 report_path = os.path.join(report_dir,report_name)
-print(report_path)
 
 # suite = unittest.TestSuite()
 # loader = unittest.TestLoader()

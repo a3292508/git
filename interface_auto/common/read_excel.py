@@ -2,8 +2,6 @@
 #-*- coding:utf-8 -*-
 
 from openpyxl import load_workbook
-from interface_auto.common.get_data import GetData
-from interface_auto.common.read_config import ReadConfig
 
 class ReadExcel:
     """封装读取excel文件及写回数据的方法"""
@@ -66,4 +64,4 @@ if __name__ == '__main__':
     res2 = ReadExcel(test_data,'register').get_data()
     for data in res2:
         print(data)
-    # ReadExcel(test_data,'login').write_data(2,'通过')
+    ReadExcel(test_data,'login').write_data(2,'通过')

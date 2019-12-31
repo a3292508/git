@@ -20,7 +20,7 @@ test_data = ReadExcel(data_path,'recharge').get_data()
 @ddt
 class TestApi(unittest.TestCase):
     """
-    封装执行测试用例的方法
+    充值接口测试
     """
     def setUp(self):
         self.base_url = ReadConfig().read_config('ENV','url')

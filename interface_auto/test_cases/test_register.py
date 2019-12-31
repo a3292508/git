@@ -19,7 +19,7 @@ test_data = ReadExcel(data_path,'register').get_data()
 
 @ddt
 class TestApi(unittest.TestCase):
-    """封装执行测试用例的方法"""
+    """注册接口测试"""
 
     def setUp(self):
         self.base_url = ReadConfig().read_config('ENV','url')

@@ -45,5 +45,6 @@ class OperaDb:
         self.contection.close()
 
 if __name__ == '__main__':
-    res = OperaDb().get_all('select RegName from member where MobilePhone="17777700002"')
+    res = OperaDb().get_one('select RegName from member where MobilePhone="17777700001"')
     print(res)
+    print(res['RegName'])
