@@ -35,11 +35,10 @@ driver.find_element_by_xpath('//span[text()="python10专用"]/ancestor::a/follow
 # ancestor:祖先节点 包括父节点
 # parent:父节点
 # preceding:当前元素节点标签之前的所有节点
-# preceding-sibling:前元素节点标签之前的所有兄弟节点
+# preceding-sibling:当前元素节点标签之前的所有兄弟节点
 # following:当前元素节点标签之后的所有节点
-# following-sibling:前元素节点标签之后的所有兄弟节点
-#
-# 使用语法：
-# /轴名称::节点名称[@属性=值]
+# following-sibling:当前元素节点标签之后的所有兄弟节点
+
+# 使用语法：/轴名称::节点名称[@属性=值]
 # 例子：//span[text()='python10专用']/ancestor::a/following-sibling::div//a      通过span去定位div下的a标签
 #应用场景：页面显示为一个表格样式的数据列，需要通过组合来定位元素

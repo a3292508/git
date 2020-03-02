@@ -1,0 +1,6 @@
+platformVersion: 5.1
+platformName: Android
+deviceName: Android Emulator
+appPackage: cn.haowu.agent
+appActivity: cn.haowu.agent.module.login.LoginActivity
+noReset: True

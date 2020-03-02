@@ -1,0 +1,10 @@
+[32mINFO    [0m web_auto:my_logger.py:33 等待('xpath', '//input[@id="username"]')元素可见
+[32mINFO    [0m web_auto:my_logger.py:33 元素('xpath', '//input[@id="username"]')输入
+[32mINFO    [0m web_auto:my_logger.py:33 查找元素：('xpath', '//input[@id="username"]')
+[32mINFO    [0m web_auto:my_logger.py:33 元素('xpath', '//input[@id="password"]')输入Zyj888888
+[32mINFO    [0m web_auto:my_logger.py:33 查找元素：('xpath', '//input[@id="password"]')
+[32mINFO    [0m web_auto:my_logger.py:33 点击元素('xpath', '//input[@class="submit hand"]')
+[32mINFO    [0m web_auto:my_logger.py:33 查找元素：('xpath', '//input[@class="submit hand"]')
+[32mINFO    [0m web_auto:my_logger.py:33 等待('xpath', '//div[@class="error-message"]')元素可见
+[32mINFO    [0m web_auto:my_logger.py:33 获取元素('xpath', '//div[@class="error-message"]')的文本内容
+[32mINFO    [0m web_auto:my_logger.py:33 查找元素：('xpath', '//div[@class="error-message"]')

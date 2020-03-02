@@ -1,0 +1,8 @@
+[32mINFO    [0m web_auto:my_logger.py:33 等待('xpath', '//input[@id="username"]')元素可见
+[32mINFO    [0m web_auto:my_logger.py:33 元素('xpath', '//input[@id="username"]')输入16602159899
+[32mINFO    [0m web_auto:my_logger.py:33 查找元素：('xpath', '//input[@id="username"]')
+[32mINFO    [0m web_auto:my_logger.py:33 元素('xpath', '//input[@id="password"]')输入Zyj888888
+[32mINFO    [0m web_auto:my_logger.py:33 查找元素：('xpath', '//input[@id="password"]')
+[32mINFO    [0m web_auto:my_logger.py:33 点击元素('xpath', '//input[@class="submit hand"]')
+[32mINFO    [0m web_auto:my_logger.py:33 查找元素：('xpath', '//input[@class="submit hand"]')
+[32mINFO    [0m web_auto:my_logger.py:33 等待('xpath', '//a[@id="logout"]')元素可见

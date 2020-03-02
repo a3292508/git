@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="1" hostname="DESKTOP-L7JJJ3C" name="pytest" skipped="0" tests="1" time="53.771" timestamp="2020-02-12T16:45:39.260077"><testcase classname="test_login_pytest.TestLogin" file="test_login_pytest.py" line="18" name="test_login_success" time="38.227"><failure message="KeyError: &apos;username1&apos;">self = &lt;class_200130_PageObject.TestCases.test_login_pytest.TestLogin object at 0x000002B7300F1D68&gt;
+access_web = (&lt;selenium.webdriver.chrome.webdriver.WebDriver (session=&quot;bb4b78a1663973345a700fad688e9f38&quot;)&gt;, &lt;class_200130_PageObject.PageObjects.login_page.LoginPage object at 0x000002B7300F19B0&gt;)
+
+    @pytest.mark.smoke
+    def test_login_success(self, access_web):  # fixture的函数名称作为用例参数，用来接收fixture的返回值，可以放多个
+        &quot;&quot;&quot;登录成功&quot;&quot;&quot;
+&gt;       access_web[1].login(success_data[&apos;username1&apos;], success_data[&apos;password&apos;])
+E       KeyError: &apos;username1&apos;
+
+test_login_pytest.py:22: KeyError</failure></testcase></testsuite></testsuites>

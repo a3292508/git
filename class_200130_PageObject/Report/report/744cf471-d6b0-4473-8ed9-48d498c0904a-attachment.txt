@@ -1,0 +1,10 @@
+[32mINFO    [0m ui_auto:my_log.py:42 登录页面_登录操作页面等待('xpath', '//input[@id="username"]')元素可见
+[32mINFO    [0m ui_auto:my_log.py:42 登录页面_登录操作页面查找元素：('xpath', '//input[@id="username"]')
+[32mINFO    [0m ui_auto:my_log.py:42 登录页面_登录操作页面元素('xpath', '//input[@id="username"]'),输入1660215989
+[32mINFO    [0m ui_auto:my_log.py:42 登录页面_登录操作页面查找元素：('xpath', '//input[@id="password"]')
+[32mINFO    [0m ui_auto:my_log.py:42 登录页面_登录操作页面元素('xpath', '//input[@id="password"]'),输入Zyj888888
+[32mINFO    [0m ui_auto:my_log.py:42 登录页面_登录操作页面查找元素：('xpath', '//input[@class="submit hand"]')
+[32mINFO    [0m ui_auto:my_log.py:42 登录页面_登录操作页面点击元素：('xpath', '//input[@class="submit hand"]')
+[32mINFO    [0m ui_auto:my_log.py:42 登录页面_错误提示页面等待('xpath', '//div[@class="error-message"]')元素可见
+[32mINFO    [0m ui_auto:my_log.py:42 登录页面_错误提示页面查找元素：('xpath', '//div[@class="error-message"]')
+[32mINFO    [0m ui_auto:my_log.py:42 登录页面_错误提示页面获取元素('xpath', '//div[@class="error-message"]')的文本内容

@@ -56,5 +56,5 @@ WebDriverWait(driver,10).until(
 driver.find_element_by_xpath('//a[@id="j_head_focus_btn"]').click()
 
 #返回之前窗口
-driver.switch_to.window(handles[0])
+# driver.switch_to.window(handles[0])
 

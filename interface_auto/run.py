@@ -23,4 +23,4 @@ with open(report_path,'wb') as file:
                             title='自动化测试报告',
                             description='注册、登录、充值接口的所有用例')
     runner.run(discover)
-    SendEmail.send_mail(report_path)
+    # SendEmail.send_mail(report_path)
